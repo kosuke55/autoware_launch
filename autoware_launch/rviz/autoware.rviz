@@ -18,11 +18,8 @@ Panels:
     Splitter Ratio: 0.5
   - Class: tier4_localization_rviz_plugin/InitialPoseButtonPanel
     Name: InitialPoseButtonPanel
-  - Class: rviz_common/Time
-    Experimental: false
-    Name: Time
-    SyncMode: 0
-    SyncSource: ""
+  - Class: AutowareDateTimePanel
+    Name: AutowareDateTimePanel
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -709,160 +706,163 @@ Visualization Manager:
           Name: Segmentation
         - Class: rviz_common/Group
           Displays:
-            - BUS:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              CAR:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              CYCLIST:
-                Alpha: 0.999
-                Color: 119; 11; 32
-              Class: autoware_auto_perception_rviz_plugin/DetectedObjects
-              Display 3d polygon: true
-              Display Label: true
-              Display PoseWithCovariance: true
-              Display Predicted Path Confidence: true
-              Display Predicted Paths: true
-              Display Twist: true
-              Display UUID: true
-              Display Velocity: true
-              Line Width: 0.03
-              Enabled: true
-              MOTORCYCLE:
-                Alpha: 0.999
-                Color: 119; 11; 32
-              Name: DetectedObjects
-              Namespaces: {}
-              PEDESTRIAN:
-                Alpha: 0.999
-                Color: 255; 192; 203
-              TRAILER:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              TRUCK:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              Topic:
-                Depth: 5
-                Durability Policy: Volatile
-                History Policy: Keep Last
-                Reliability Policy: Reliable
-                Value: /perception/object_recognition/detection/objects
-              UNKNOWN:
-                Alpha: 0.999
-                Color: 255; 255; 255
-              Value: true
-          Enabled: false
-          Name: Detection
-        - Class: rviz_common/Group
-          Displays:
-            - BUS:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              CAR:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              CYCLIST:
-                Alpha: 0.999
-                Color: 119; 11; 32
-              Class: autoware_auto_perception_rviz_plugin/TrackedObjects
-              Display 3d polygon: true
-              Display Label: true
-              Display PoseWithCovariance: true
-              Display Predicted Path Confidence: true
-              Display Predicted Paths: true
-              Display Twist: true
-              Display UUID: true
-              Display Velocity: true
-              Line Width: 0.03
-              Enabled: true
-              MOTORCYCLE:
-                Alpha: 0.999
-                Color: 119; 11; 32
-              Name: TrackedObjects
-              Namespaces: {}
-              PEDESTRIAN:
-                Alpha: 0.999
-                Color: 255; 192; 203
-              TRAILER:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              TRUCK:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              Topic:
-                Depth: 5
-                Durability Policy: Volatile
-                History Policy: Keep Last
-                Reliability Policy: Reliable
-                Value: /perception/object_recognition/tracking/objects
-              UNKNOWN:
-                Alpha: 0.999
-                Color: 255; 255; 255
-              Value: true
-          Enabled: false
-          Name: Tracking
-        - Class: rviz_common/Group
-          Displays:
-            - BUS:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              CAR:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              CYCLIST:
-                Alpha: 0.999
-                Color: 119; 11; 32
-              Class: autoware_auto_perception_rviz_plugin/PredictedObjects
-              Display 3d polygon: true
-              Display Label: true
-              Display PoseWithCovariance: false
-              Display Predicted Path Confidence: true
-              Display Predicted Paths: true
-              Display Twist: false
-              Display UUID: true
-              Display Velocity: true
-              Line Width: 0.03
-              Enabled: true
-              MOTORCYCLE:
-                Alpha: 0.999
-                Color: 119; 11; 32
-              Name: PredictedObjects
-              Namespaces: {}
-              PEDESTRIAN:
-                Alpha: 0.999
-                Color: 255; 192; 203
-              TRAILER:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              TRUCK:
-                Alpha: 0.999
-                Color: 30; 144; 255
-              Topic:
-                Depth: 5
-                Durability Policy: Volatile
-                History Policy: Keep Last
-                Reliability Policy: Reliable
-                Value: /perception/object_recognition/objects
-              UNKNOWN:
-                Alpha: 0.999
-                Color: 255; 255; 255
-              Value: true
-            - Class: rviz_default_plugins/MarkerArray
+            - Class: rviz_common/Group
+              Displays:
+                - BUS:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  CAR:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  CYCLIST:
+                    Alpha: 0.999
+                    Color: 119; 11; 32
+                  Class: autoware_auto_perception_rviz_plugin/DetectedObjects
+                  Display 3d polygon: true
+                  Display Label: true
+                  Display PoseWithCovariance: true
+                  Display Predicted Path Confidence: true
+                  Display Predicted Paths: true
+                  Display Twist: true
+                  Display UUID: true
+                  Display Velocity: true
+                  Line Width: 0.03
+                  Enabled: true
+                  MOTORCYCLE:
+                    Alpha: 0.999
+                    Color: 119; 11; 32
+                  Name: DetectedObjects
+                  Namespaces: {}
+                  PEDESTRIAN:
+                    Alpha: 0.999
+                    Color: 255; 192; 203
+                  TRAILER:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  TRUCK:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  Topic:
+                    Depth: 5
+                    Durability Policy: Volatile
+                    History Policy: Keep Last
+                    Reliability Policy: Best Effort
+                    Value: /perception/object_recognition/detection/objects
+                  UNKNOWN:
+                    Alpha: 0.999
+                    Color: 255; 255; 255
+                  Value: true
               Enabled: false
-              Name: Maneuver
-              Namespaces:
-                maneuver: true
-              Topic:
-                Depth: 5
-                Durability Policy: Volatile
-                History Policy: Keep Last
-                Reliability Policy: Reliable
-                Value: /perception/object_recognition/prediction/maneuver
-              Value: true
+              Name: Detection
+            - Class: rviz_common/Group
+              Displays:
+                - BUS:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  CAR:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  CYCLIST:
+                    Alpha: 0.999
+                    Color: 119; 11; 32
+                  Class: autoware_auto_perception_rviz_plugin/TrackedObjects
+                  Display 3d polygon: true
+                  Display Label: true
+                  Display PoseWithCovariance: true
+                  Display Predicted Path Confidence: true
+                  Display Predicted Paths: true
+                  Display Twist: true
+                  Display UUID: true
+                  Display Velocity: true
+                  Line Width: 0.03
+                  Enabled: true
+                  MOTORCYCLE:
+                    Alpha: 0.999
+                    Color: 119; 11; 32
+                  Name: TrackedObjects
+                  Namespaces: {}
+                  PEDESTRIAN:
+                    Alpha: 0.999
+                    Color: 255; 192; 203
+                  TRAILER:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  TRUCK:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  Topic:
+                    Depth: 5
+                    Durability Policy: Volatile
+                    History Policy: Keep Last
+                    Reliability Policy: Best Effort
+                    Value: /perception/object_recognition/tracking/objects
+                  UNKNOWN:
+                    Alpha: 0.999
+                    Color: 255; 255; 255
+                  Value: true
+              Enabled: false
+              Name: Tracking
+            - Class: rviz_common/Group
+              Displays:
+                - BUS:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  CAR:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  CYCLIST:
+                    Alpha: 0.999
+                    Color: 119; 11; 32
+                  Class: autoware_auto_perception_rviz_plugin/PredictedObjects
+                  Display 3d polygon: true
+                  Display Label: true
+                  Display PoseWithCovariance: true
+                  Display Predicted Path Confidence: true
+                  Display Predicted Paths: true
+                  Display Twist: true
+                  Display UUID: true
+                  Display Velocity: true
+                  Line Width: 0.03
+                  Enabled: true
+                  MOTORCYCLE:
+                    Alpha: 0.999
+                    Color: 119; 11; 32
+                  Name: PredictedObjects
+                  Namespaces: {}
+                  PEDESTRIAN:
+                    Alpha: 0.999
+                    Color: 255; 192; 203
+                  TRAILER:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  TRUCK:
+                    Alpha: 0.999
+                    Color: 30; 144; 255
+                  Topic:
+                    Depth: 5
+                    Durability Policy: Volatile
+                    History Policy: Keep Last
+                    Reliability Policy: Best Effort
+                    Value: /perception/object_recognition/objects
+                  UNKNOWN:
+                    Alpha: 0.999
+                    Color: 255; 255; 255
+                  Value: true
+                - Class: rviz_default_plugins/MarkerArray
+                  Enabled: false
+                  Name: Maneuver
+                  Namespaces: {}
+                  Topic:
+                    Depth: 5
+                    Durability Policy: Volatile
+                    History Policy: Keep Last
+                    Reliability Policy: Best Effort
+                    Value: /perception/object_recognition/prediction/maneuver
+                  Value: true
+              Enabled: true
+              Name: Prediction
           Enabled: true
-          Name: Prediction
+          Name: ObjectRecognition
         - Class: rviz_common/Group
           Displays:
             - Class: rviz_default_plugins/Image
@@ -876,7 +876,7 @@ Visualization Manager:
                 Depth: 5
                 Durability Policy: Volatile
                 History Policy: Keep Last
-                Reliability Policy: Reliable
+                Reliability Policy: Best Effort
                 Value: /perception/traffic_light_recognition/debug/rois
               Value: true
             - Class: rviz_default_plugins/MarkerArray
@@ -887,11 +887,36 @@ Visualization Manager:
                 Depth: 5
                 Durability Policy: Volatile
                 History Policy: Keep Last
-                Reliability Policy: Reliable
+                Reliability Policy: Best Effort
                 Value: /perception/traffic_light_recognition/traffic_light_map_based_detector/debug/markers
               Value: true
           Enabled: true
           Name: TrafficLight
+        - Class: rviz_common/Group
+          Displays:
+            - Alpha: 0.5
+              Class: rviz_default_plugins/Map
+              Color Scheme: map
+              Draw Behind: false
+              Enabled: true
+              Name: Map
+              Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                Filter size: 10
+                History Policy: Keep Last
+                Reliability Policy: Best Effort
+                Value: /perception/occupancy_grid_map/map
+              Update Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                History Policy: Keep Last
+                Reliability Policy: Best Effort
+                Value: /perception/occupancy_grid_map/map_updates
+              Use Timestamp: false
+              Value: true
+          Enabled: false
+          Name: OccupancyGrid
       Enabled: true
       Name: Perception
     - Class: rviz_common/Group
@@ -903,6 +928,7 @@ Visualization Manager:
               Name: RouteArea
               Namespaces:
                 goal_lanelets: true
+                lane_start_bound: false
                 left_lane_bound: false
                 right_lane_bound: false
                 route_lanelets: true
@@ -1034,18 +1060,6 @@ Visualization Manager:
                             History Policy: Keep Last
                             Reliability Policy: Reliable
                             Value: /planning/scenario_planning/lane_driving/behavior_planning/behavior_velocity_planner/virtual_wall/crosswalk
-                          Value: true
-                        - Class: rviz_default_plugins/MarkerArray
-                          Enabled: true
-                          Name: VirtualWall (Walkway)
-                          Namespaces:
-                            {}
-                          Topic:
-                            Depth: 5
-                            Durability Policy: Volatile
-                            History Policy: Keep Last
-                            Reliability Policy: Reliable
-                            Value: /planning/scenario_planning/lane_driving/behavior_planning/behavior_velocity_planner/virtual_wall/walkway
                           Value: true
                         - Class: rviz_default_plugins/MarkerArray
                           Enabled: true
@@ -1186,18 +1200,6 @@ Visualization Manager:
                           Value: false
                         - Class: rviz_default_plugins/MarkerArray
                           Enabled: false
-                          Name: Walkway
-                          Namespaces:
-                            {}
-                          Topic:
-                            Depth: 5
-                            Durability Policy: Volatile
-                            History Policy: Keep Last
-                            Reliability Policy: Reliable
-                            Value: /planning/scenario_planning/lane_driving/behavior_planning/behavior_velocity_planner/debug/walkway
-                          Value: false
-                        - Class: rviz_default_plugins/MarkerArray
-                          Enabled: false
                           Name: Intersection
                           Namespaces:
                             {}
@@ -1304,43 +1306,6 @@ Visualization Manager:
                             Reliability Policy: Reliable
                             Value: /planning/scenario_planning/lane_driving/behavior_planning/behavior_velocity_planner/debug/run_out
                           Value: false
-                        - Class: rviz_common/Group
-                          Displays:
-                            - Class: rviz_default_plugins/MarkerArray
-                              Enabled: true
-                              Name: GoalSearchArea
-                              Namespaces:
-                                collision_polygons: true
-                              Topic:
-                                Depth: 5
-                                Durability Policy: Volatile
-                                History Policy: Keep Last
-                                Reliability Policy: Reliable
-                                Value: /planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/pull_over/debug/parking_area
-                              Value: false
-                            - Alpha: 0.9990000128746033
-                              Arrow Length: 0.30000001192092896
-                              Axes Length: 0.30000001192092896
-                              Axes Radius: 0.009999999776482582
-                              Class: rviz_default_plugins/PoseArray
-                              Color: 255; 25; 0
-                              Enabled: false
-                              Head Length: 0.10000000149011612
-                              Head Radius: 0.20000000298023224
-                              Name: PullOverPathPoseArray
-                              Shaft Length: 0.20000000298023224
-                              Shaft Radius: 0.05000000074505806
-                              Shape: Arrow (3D)
-                              Topic:
-                                Depth: 5
-                                Durability Policy: Volatile
-                                Filter size: 10
-                                History Policy: Keep Last
-                                Reliability Policy: Reliable
-                                Value: /planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/pull_over/debug/path_pose_array
-                              Value: false
-                          Enabled: false
-                          Name: PullOver
                       Enabled: false
                       Name: DebugMarker
                   Enabled: true
@@ -1408,18 +1373,6 @@ Visualization Manager:
                             Reliability Policy: Reliable
                             Value: /planning/scenario_planning/lane_driving/motion_planning/obstacle_avoidance_planner/debug/wall_marker
                           Value: true
-                        - Class: rviz_default_plugins/MarkerArray
-                          Enabled: true
-                          Name: VirtualWall (ObstacleCruise)
-                          Namespaces:
-                            {}
-                          Topic:
-                            Depth: 5
-                            Durability Policy: Volatile
-                            History Policy: Keep Last
-                            Reliability Policy: Reliable
-                            Value: /planning/scenario_planning/lane_driving/motion_planning/obstacle_cruise_planner/virtual_wall
-                          Value: true
                       Enabled: true
                       Name: VirtualWall
                     - Class: rviz_common/Group
@@ -1436,34 +1389,6 @@ Visualization Manager:
                             Reliability Policy: Reliable
                             Value: /planning/scenario_planning/lane_driving/motion_planning/obstacle_stop_planner/debug/marker
                           Value: true
-                        - Class: rviz_common/Group
-                          Displays:
-                            - Class: rviz_default_plugins/MarkerArray
-                              Enabled: true
-                              Name: CruiseVirtualWall
-                              Namespaces:
-                                {}
-                              Topic:
-                                Depth: 5
-                                Durability Policy: Volatile
-                                History Policy: Keep Last
-                                Reliability Policy: Reliable
-                                Value: /planning/scenario_planning/lane_driving/motion_planning/obstacle_cruise_planner/debug/cruise_wall_marker
-                              Value: true
-                            - Class: rviz_default_plugins/MarkerArray
-                              Enabled: true
-                              Name: DebugMarker
-                              Namespaces:
-                                {}
-                              Topic:
-                                Depth: 5
-                                Durability Policy: Volatile
-                                History Policy: Keep Last
-                                Reliability Policy: Reliable
-                                Value: /planning/scenario_planning/lane_driving/motion_planning/obstacle_cruise_planner/debug/marker
-                              Value: true
-                          Enabled: true
-                          Name: ObstacleCruise
                         - Class: rviz_default_plugins/MarkerArray
                           Enabled: true
                           Name: SurroundObstacleCheck
@@ -1558,28 +1483,23 @@ Visualization Manager:
                   Value: true
               Enabled: true
               Name: Parking
-            - Alpha: 1
-              Axes Length: 1
-              Axes Radius: 0.30000001192092896
-              Class: rviz_default_plugins/Pose
-              Color: 255; 25; 0
+          Enabled: true
+          Name: ScenarioPlanning
+        - Class: rviz_common/Group
+          Displays:
+            - Class: rviz_default_plugins/MarkerArray
               Enabled: true
-              Head Length: 0.30000001192092896
-              Head Radius: 0.10000000149011612
-              Name: ModifiedGoal
-              Shaft Length: 1
-              Shaft Radius: 0.05000000074505806
-              Shape: Axes
+              Name: PlanningErrorMarker
+              Namespaces: {}
               Topic:
                 Depth: 5
                 Durability Policy: Volatile
-                Filter size: 10
                 History Policy: Keep Last
-                Reliability Policy: Reliable
-                Value: /planning/scenario_planning/modified_goal
+                Reliability Policy: Best Effort
+                Value: /planning/planning_diagnostics/planning_error_monitor/debug/marker
               Value: true
-          Enabled: true
-          Name: ScenarioPlanning
+          Enabled: false
+          Name: Diagnostic
       Enabled: true
       Name: Planning
     - Class: rviz_common/Group
